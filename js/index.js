@@ -17,6 +17,7 @@ if (navToggle) {
 if (navClose) {
     navClose.addEventListener('click', () => {
         navMenu.classList.remove('show-menu');
+        //console.log("hello");
     })
 }
 
@@ -207,21 +208,21 @@ themeButton.addEventListener('click', () => {
 
 
 
-var typed; 
+var typed;
 function text() {
     if (typed) {
         typed.destroy();
     }
-    
+
     typed = new Typed('.typing-text', {
-        strings: ['Frontend Developer', 'Backend Developer','Computer Science Student'],
+        strings: ['Frontend Developer', 'Backend Developer', 'Computer Science Student'],
         typeSpeed: 160,
-        loop: true 
+        loop: true
     });
 }
 
-text(); 
-setInterval(text,16000);
+text();
+setInterval(text, 16000);
 
 
 
@@ -236,29 +237,30 @@ function Send() {
     if (name === "") {
         alert("Please enter the name");
         return;
-    } 
+    }
     if (email === "") {
         alert("Please enter the email");
         return;
-    } 
+    }
     if (message === "") {
         alert("Please enter the message");
         return;
-    } 
+    }
     if (pos <= 0) {
         alert("Please enter a valid Email");
         return;
     }
     var body = "Name: " + name + "<br/> Email: " + email + "<br/> Message: " + message;
     console.log(body);
+    
     Email.send({
-        SecureToken : "66113086-6866-4634-9f0f-9cd4a670d91c",
+        SecureToken: "66113086-6866-4634-9f0f-9cd4a670d91c",
         To: "chhotupatel705@gmail.com",
         From: "chhotupatel705@gmail.com",
         Subject: "My Porfolio",
         Body: body
     }).then(function (message) {
-        if (message!== "" && email!== "" && name!== "") {
+        if (message !== "" && email !== "" && name !== "") {
             swal("Successful", "Your data was successfully received by Chhotelal Patel", "success");
 
         } else {
